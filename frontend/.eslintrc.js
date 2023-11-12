@@ -35,5 +35,6 @@ module.exports = {
       },
     ],
     'react/button-has-type': 'warn',
+    'react/function-component-definition': 'off',
   },
 };
