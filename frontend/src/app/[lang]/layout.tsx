@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
-import { dir } from 'i18next';
 import { Inter } from 'next/font/google';
 import StyledComponentsRegistry from '@/app/lib/AntdRegistry';
+import { direction, getDictionary } from '@/app/i18n/dictionaries/dictionaries';
+import { i18n, Locale } from '@/app/i18n/config';
 
 import '../globals.css';
-import { languages } from '@/app/i18n/settings';
+import { TranslationProvider } from '../i18n/TranslationContext';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -14,16 +15,29 @@ export const metadata: Metadata = {
 };
 
 // изучить
-// export async function generateStaticParams() {
-//   return languages.map((lng) => ({ lng }));
-// }
+export async function generateStaticParams() {
+  return i18n.locales.map((locale) => ({ lang: locale }));
+}
 
-export default function RootLayout({ children, params: { lang } }: { children: React.ReactNode }) {
+export default async function RootLayout({
+  children,
+  params: { lang },
+}: {
+  children: React.ReactNode;
+  params: { lang: Locale };
+}) {
+  console.log('update RootLayout');
+  const dictionary = await getDictionary(lang);
+  const dir = direction[lang];
+
   return (
-    // изучить dir и i18next
-    <html lang={lang} dir={dir(lang)}>
+    <html lang={lang} dir={dir}>
       <body className={inter.className}>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        <StyledComponentsRegistry>
+          <TranslationProvider dictionary={dictionary} locale={lang}>
+            {children}
+          </TranslationProvider>
+        </StyledComponentsRegistry>
       </body>
     </html>
   );

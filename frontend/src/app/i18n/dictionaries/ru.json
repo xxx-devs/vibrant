@@ -1,0 +1,9 @@
+{
+  "server-component": {
+    "welcome": "Здарова"
+  },
+  "counter": {
+    "increment": "ru_Increment",
+    "decrement": "Уменьшить"
+  }
+}
