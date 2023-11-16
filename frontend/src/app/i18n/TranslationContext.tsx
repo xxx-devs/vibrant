@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useContext, useMemo } from 'react';
-import { Dictionary } from '@/app/i18n/dictionaries/dictionaries';
-import { Locale } from '@/app/i18n/config';
+
+import { Dictionary, Locale } from '@/app/i18n/types';
 
 interface TranslationProviderProps {
   dictionary: Dictionary;

@@ -1,6 +1,6 @@
-import { Dictionary } from '@/app/i18n/dictionaries/dictionaries';
 import IntlMessageFormat from 'intl-messageformat';
-import { Locale } from '@/app/i18n/config';
+
+import { Dictionary, Locale } from '@/app/i18n/types';
 
 export const getTranslationMethod =
   (dictionary: Dictionary, locale: Locale) =>

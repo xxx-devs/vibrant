@@ -1,8 +1,10 @@
+import React from 'react';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import StyledComponentsRegistry from '@/app/lib/AntdRegistry';
 import { direction, getDictionary } from '@/app/i18n/dictionaries/dictionaries';
-import { i18n, Locale } from '@/app/i18n/config';
+import { i18n } from '@/app/i18n/config';
+import { LangProps } from '@/app/i18n/types';
 import { TranslationProvider } from '../i18n/TranslationContext';
 
 import '../globals.css';
@@ -25,11 +27,7 @@ export async function generateStaticParams() {
 export default async function RootLayout({
   children,
   params: { lang },
-}: {
-  // params: { lang: Locale } заменить
-  children: React.ReactNode;
-  params: { lang: Locale };
-}) {
+}: React.PropsWithChildren<LangProps>) {
   console.log('update RootLayout');
   const dictionary = await getDictionary(lang);
   const dir = direction[lang];

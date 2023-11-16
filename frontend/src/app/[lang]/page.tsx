@@ -1,10 +1,10 @@
 import LocaleSwitcher from '@/app/[lang]/components/LocaleSwitcher';
-import { Locale } from '@/app/i18n/config';
 import { useTranslation } from '@/app/i18n/useTranslation.server';
+import { LangProps } from '@/app/i18n/types';
 import styles from './page.module.css';
 import Counter from './components/Counter';
 
-export default async function Home({ params: { lang } }: { params: { lang: Locale } }) {
+export default async function Home({ params: { lang } }: LangProps) {
   // надо сбилдить и посмотреть как он сохраняет словари (надо проверить что он не тащит лишних словарей)
   const t = await useTranslation(lang);
 
