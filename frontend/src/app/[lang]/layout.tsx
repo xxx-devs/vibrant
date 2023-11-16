@@ -3,9 +3,9 @@ import { Inter } from 'next/font/google';
 import StyledComponentsRegistry from '@/app/lib/AntdRegistry';
 import { direction, getDictionary } from '@/app/i18n/dictionaries/dictionaries';
 import { i18n, Locale } from '@/app/i18n/config';
+import { TranslationProvider } from '../i18n/TranslationContext';
 
 import '../globals.css';
-import { TranslationProvider } from '../i18n/TranslationContext';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,10 +19,14 @@ export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
 }
 
+// настроить antd
+// настроить hreflang
+
 export default async function RootLayout({
   children,
   params: { lang },
 }: {
+  // params: { lang: Locale } заменить
   children: React.ReactNode;
   params: { lang: Locale };
 }) {
