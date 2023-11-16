@@ -489,14 +489,6 @@
   resolved "https://registry.yarnpkg.com/@ungap/structured-clone/-/structured-clone-1.2.0.tgz#756641adb587851b5ccb3e095daf27ae581c8406"
   integrity sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==
 
-accept-language@^3.0.18:
-  version "3.0.18"
-  resolved "https://registry.yarnpkg.com/accept-language/-/accept-language-3.0.18.tgz#f5025f17bf65a466a845838ccf98cdb877d83384"
-  integrity sha512-sUofgqBPzgfcF20sPoBYGQ1IhQLt2LSkxTnlQSuLF3n5gPEqd5AimbvOvHEi0T1kLMiGVqPWzI5a9OteBRth3A==
-  dependencies:
-    bcp47 "^1.1.2"
-    stable "^0.1.6"
-
 acorn-jsx@^5.3.2:
   version "5.3.2"
   resolved "https://registry.yarnpkg.com/acorn-jsx/-/acorn-jsx-5.3.2.tgz#7ed5bb55908b3b2f1bc55c6af1653bada7f07937"
@@ -734,11 +726,6 @@ balanced-match@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.2.tgz#e83e3a7e3f300b34cb9d87f615fa0cbf357690ee"
   integrity sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==
-
-bcp47@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/bcp47/-/bcp47-1.1.2.tgz#354be3307ffd08433a78f5e1e2095845f89fc7fe"
-  integrity sha512-JnkkL4GUpOvvanH9AZPX38CxhiLsXMBicBY2IAtqiVN8YulGDQybUydWA4W6yAMtw6iShtw+8HEF6cfrTHU+UQ==
 
 big-integer@^1.6.44:
   version "1.6.51"
@@ -1680,13 +1667,6 @@ hasown@^2.0.0:
   dependencies:
     function-bind "^1.1.2"
 
-html-parse-stringify@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/html-parse-stringify/-/html-parse-stringify-3.0.1.tgz#dfc1017347ce9f77c8141a507f233040c59c55d2"
-  integrity sha512-KknJ50kTInJ7qIScF3jeaFRpMpE8/lfiTdzf/twXyPBLAGrLRTmkz3AdTnKeh40X8k9L2fdYwEp/42WGXIRGcg==
-  dependencies:
-    void-elements "3.1.0"
-
 human-signals@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/human-signals/-/human-signals-2.1.0.tgz#dc91fcba42e4d06e4abaed33b3e7a3c02f514ea0"
@@ -1706,13 +1686,6 @@ husky@^8.0.3:
   version "8.0.3"
   resolved "https://registry.yarnpkg.com/husky/-/husky-8.0.3.tgz#4936d7212e46d1dea28fef29bb3a108872cd9184"
   integrity sha512-+dQSyqPh4x1hlO1swXBiNb2HzTDN1I2IGLQx1GrBuiqFJfoMrnZWwVmatvSiO+Iz8fBUnf+lekwNo4c2LlXItg==
-
-i18next@^23.7.5:
-  version "23.7.5"
-  resolved "https://registry.yarnpkg.com/i18next/-/i18next-23.7.5.tgz#f9c870ffed5b60b102f2f10ccf31dd55de2b2c8c"
-  integrity sha512-IKpP+vu/sU3UYZe6ajizEXiretu6YJQE0zhkPJBoiOboiR4NLzbtJP/MADCcNx9nAGYM5WTEW4MBvaDx+gK+6A==
-  dependencies:
-    "@babel/runtime" "^7.23.2"
 
 ignore@^5.2.0, ignore@^5.2.4:
   version "5.2.4"
@@ -2843,14 +2816,6 @@ react-dom@^18:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
 
-react-i18next@^13.4.0:
-  version "13.4.0"
-  resolved "https://registry.yarnpkg.com/react-i18next/-/react-i18next-13.4.0.tgz#e5e333f6c2736969c7d608f5b0445a92a34b90a9"
-  integrity sha512-sZlTQEVK5dQuvq8AaIuj2OKviPqEskcBZdcHrsaoNGLv/uVCqUBfKYvJg9vcVeVqlxjJyYQ6A7LIHl4k7kkD3w==
-  dependencies:
-    "@babel/runtime" "^7.22.5"
-    html-parse-stringify "^3.0.1"
-
 react-is@^16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
@@ -3078,11 +3043,6 @@ source-map-js@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.0.2.tgz#adbc361d9c62df380125e7f161f71c826f1e490c"
   integrity sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==
-
-stable@^0.1.6:
-  version "0.1.8"
-  resolved "https://registry.yarnpkg.com/stable/-/stable-0.1.8.tgz#836eb3c8382fe2936feaf544631017ce7d47a3cf"
-  integrity sha512-ji9qxRnOVfcuLDySj9qzhGSEFVobyt1kIOSkj1qZzYLzq7Tos/oUUWvotUPQLlrsidqsK6tBH89Bc9kL5zHA6w==
 
 streamsearch@^1.1.0:
   version "1.1.0"
@@ -3355,11 +3315,6 @@ uri-js@^4.2.2:
   integrity sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==
   dependencies:
     punycode "^2.1.0"
-
-void-elements@3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/void-elements/-/void-elements-3.1.0.tgz#614f7fbf8d801f0bb5f0661f5b2f5785750e4f09"
-  integrity sha512-Dhxzh5HZuiHQhbvTW9AMetFfBHDMYpo23Uo9btPXgdYP+3T5S+p+jgNy7spra+veYhBP2dCSgxR/i2Y02h5/6w==
 
 watchpack@2.4.0:
   version "2.4.0"
