@@ -6,7 +6,6 @@ import { Locale as AntdLocale } from 'antd/es/locale';
 const localeMap: Record<Locale, () => Promise<AntdLocale>> = {
   en: () => import('antd/es/locale/en_US').then((module) => module.default),
   ru: () => import('antd/es/locale/ru_RU').then((module) => module.default),
-  'zh-CN': () => import('antd/es/locale/zh_CN').then((module) => module.default),
 };
 
 interface AntdConfigProviderProps {

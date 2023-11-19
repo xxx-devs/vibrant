@@ -1,6 +1,5 @@
 'use client';
 
-import 'dayjs/locale/zh-cn';
 import 'dayjs/locale/ru';
 
 // https://github.com/ant-design/ant-design/issues/45931

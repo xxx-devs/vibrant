@@ -9,6 +9,7 @@ import Cookies from 'js-cookie';
 export default function LocaleSwitcher() {
   const pathName = usePathname();
   // https://nextjs.org/docs/messages/deopted-into-client-rendering
+  // TODO realise if we need redirect with searchParams
   // const searchParams = useSearchParams();
 
   const redirectedPathName = (locale: Locale) => {

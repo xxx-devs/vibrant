@@ -3,6 +3,7 @@ import { match } from '@formatjs/intl-localematcher';
 import Negotiator from 'negotiator';
 import { i18n, PREFERRED_LOCALE_COOKIE } from '@/app/i18n/config';
 import { Locale } from '@/app/i18n/types';
+import { consoleLogDev } from '@/app/utils/common';
 
 export const config = {
   matcher: [
@@ -18,7 +19,6 @@ export const config = {
       // about missing - https://github.com/vercel/next.js/discussions/37736
       missing: [
         { type: 'header', key: 'next-router-prefetch' },
-        { type: 'header', key: 'rsc' },
         { type: 'header', key: 'purpose', value: 'prefetch' },
       ],
     },
@@ -43,11 +43,9 @@ function getLocale(request: NextRequest): Locale | undefined {
   return match(languages, i18n.locales, i18n.defaultLocale) as Locale;
 }
 
-// протестить что переход корректный с / или /events
-
 export function middleware(request: NextRequest) {
   const { pathname, search } = request.nextUrl;
-  console.log('middleware');
+  consoleLogDev('middleware');
   const pathnameIsMissingLocale = i18n.locales.every(
     (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`,
   );
@@ -60,18 +58,6 @@ export function middleware(request: NextRequest) {
 
     return NextResponse.redirect(new URL(newPath, request.url));
   }
-
-  // разобраться с этим
-  // if (request.headers.has('referer')) {
-  //   const refererUrl = new URL(request.headers.get('referer'));
-  //   // дублирование
-  //   const langInReferer = i18n.locales.find((locale) =>
-  //     refererUrl.pathname.startsWith(`/${locale}`),
-  //   );
-  //   const response = NextResponse.next();
-  //   if (langInReferer) response.cookies.set(COOKIE_NAME, langInReferer);
-  //   return response;
-  // }
 
   return NextResponse.next();
 }

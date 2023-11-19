@@ -5,12 +5,7 @@ import styles from './page.module.css';
 import Counter from './components/Counter';
 import LocaleSwitcher from './components/LocaleSwitcher';
 
-// надо сделать обертку куда положить эти импорты, и сделать его клиентским
-// можно замерить как он подгружает, в теории он должен изначально вернуть серверный компонент без локалей
-// а потом встроить клиентский с выставленными локалями
-
 export default async function Home({ params: { lang } }: LangProps) {
-  // надо сбилдить и посмотреть как он сохраняет словари (надо проверить что он не тащит лишних словарей)
   const t = await useTranslation(lang);
 
   return (
