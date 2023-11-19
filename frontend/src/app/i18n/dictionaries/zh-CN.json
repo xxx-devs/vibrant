@@ -1,0 +1,9 @@
+{
+  "server-component": {
+    "welcome": "Здорова_kit"
+  },
+  "counter": {
+    "increment": "kit_Increment",
+    "decrement": "kit_Уменьшить"
+  }
+}

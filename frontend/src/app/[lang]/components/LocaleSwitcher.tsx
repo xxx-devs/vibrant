@@ -1,6 +1,6 @@
 'use client';
 
-import { usePathname, useSearchParams } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { i18n, PREFERRED_LOCALE_COOKIE } from '@/app/i18n/config';
 import { Locale } from '@/app/i18n/types';
@@ -8,7 +8,8 @@ import Cookies from 'js-cookie';
 
 export default function LocaleSwitcher() {
   const pathName = usePathname();
-  const searchParams = useSearchParams();
+  // https://nextjs.org/docs/messages/deopted-into-client-rendering
+  // const searchParams = useSearchParams();
 
   const redirectedPathName = (locale: Locale) => {
     const segments = pathName.split('/');
@@ -30,7 +31,7 @@ export default function LocaleSwitcher() {
             <Link
               href={{
                 pathname: redirectedPathName(locale),
-                search: searchParams.toString(),
+                // search: searchParams.toString(),
               }}
               prefetch
               onClick={() => onClick(locale)}

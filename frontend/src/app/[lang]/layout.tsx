@@ -5,6 +5,9 @@ import StyledComponentsRegistry from '@/app/lib/AntdRegistry';
 import { direction, getDictionary } from '@/app/i18n/dictionaries/dictionaries';
 import { i18n } from '@/app/i18n/config';
 import { LangProps } from '@/app/i18n/types';
+import AntdConfigProvider from '@/app/lib/AntdConfigProvider';
+import dayjs from 'dayjs';
+import DayJSLocale from '@/app/lib/DayJSLocale';
 import { TranslationProvider } from '../i18n/TranslationContext';
 
 import '../globals.css';
@@ -21,7 +24,6 @@ export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
 }
 
-// настроить antd
 // настроить hreflang
 
 export default async function RootLayout({
@@ -29,17 +31,23 @@ export default async function RootLayout({
   params: { lang },
 }: React.PropsWithChildren<LangProps>) {
   console.log('update RootLayout');
+  console.log(lang);
   const dictionary = await getDictionary(lang);
   const dir = direction[lang];
+
+  dayjs.locale(lang);
 
   return (
     <html lang={lang} dir={dir}>
       <body className={inter.className}>
         <StyledComponentsRegistry>
-          <TranslationProvider dictionary={dictionary} locale={lang}>
-            {children}
-          </TranslationProvider>
+          <AntdConfigProvider locale={lang} dir={dir}>
+            <TranslationProvider dictionary={dictionary} locale={lang}>
+              {children}
+            </TranslationProvider>
+          </AntdConfigProvider>
         </StyledComponentsRegistry>
+        <DayJSLocale />
       </body>
     </html>
   );
