@@ -1,9 +1,5 @@
 {
-  "server-component": {
-    "welcome": "Здарова"
-  },
-  "counter": {
-    "increment": "ru_Increment",
-    "decrement": "Уменьшить"
-  }
+  "create-event": "Создать Cобытие",
+  "account": "Аккаунт",
+  "logout": "Выйти"
 }

@@ -1,9 +1,5 @@
 {
-  "server-component": {
-    "welcome": "Welcome"
-  },
-  "counter": {
-    "increment": "Increment",
-    "decrement": "Decrement"
-  }
+  "create-event": "Create Event",
+  "account": "Account",
+  "logout": "Logout"
 }
