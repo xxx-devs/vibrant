@@ -1,5 +1,13 @@
 {
+  "common": {
+    "today": "Сегодня",
+    "tomorrow": "Завтра"
+  },
   "create-event": "Создать Cобытие",
   "account": "Аккаунт",
-  "logout": "Выйти"
+  "logout": "Выйти",
+  "events-carousel": {
+    "show-all": "Показать все ({count})",
+    "show-more": "Показать еще"
+  }
 }

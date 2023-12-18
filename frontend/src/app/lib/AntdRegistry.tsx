@@ -16,6 +16,7 @@ const StyledComponentsRegistry = ({ children }: React.PropsWithChildren) => {
       return undefined;
     }
     isServerInserted.current = true;
+    // eslint-disable-next-line react/no-danger
     return <style id="antd" dangerouslySetInnerHTML={{ __html: extractStyle(cache, true) }} />;
   });
 

@@ -1,5 +1,13 @@
 {
+  "common": {
+    "today": "Today",
+    "tomorrow": "Tomorrow"
+  },
   "create-event": "Create Event",
   "account": "Account",
-  "logout": "Logout"
+  "logout": "Logout",
+  "events-carousel": {
+    "show-all": "Show all ({count})",
+    "show-more": "Show more"
+  }
 }
