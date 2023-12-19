@@ -1,13 +1,13 @@
 'use client';
 
+import { Button, Dropdown, MenuProps } from 'antd';
+import Cookies from 'js-cookie';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import { i18n, PREFERRED_LOCALE_COOKIE } from '@/app/i18n/config';
-import { Locale } from '@/app/i18n/types';
-import Cookies from 'js-cookie';
+import { i18n, PREFERRED_LOCALE_COOKIE } from '@/app/lib/i18n/config';
+import { Locale } from '@/app/shared/i18n/types';
+import { useTranslationContext } from '@/app/shared/i18n/useTranslationContext';
 import { GlobalOutlined } from '@ant-design/icons';
-import { Button, Dropdown, MenuProps } from 'antd';
-import { useTranslationContext } from '@/app/i18n/TranslationContext';
 
 const LANGUAGES_TRANSLATIONS: Record<Locale, string> = {
   en: 'English',

@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import Image from 'next/image';
-import Card, { Meta } from '@/app/lib/antd/Card';
+import Card, { Meta } from '@/app/shared/ui/Card';
 import { Avatar } from 'antd';
-import { Event } from '@/app/types/Event';
-import styles from '@/app/[lang]/page.module.css';
+import { Event } from '@/app/shared/types/Event';
+import styles from './styles.module.css';
 
 interface EventCardProps {
   event: Event;

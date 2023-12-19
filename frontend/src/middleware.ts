@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { match } from '@formatjs/intl-localematcher';
 import Negotiator from 'negotiator';
-import { i18n, PREFERRED_LOCALE_COOKIE } from '@/app/i18n/config';
-import { Locale } from '@/app/i18n/types';
-import { consoleLogDev } from '@/app/utils/common';
+import { i18n, PREFERRED_LOCALE_COOKIE } from '@/app/lib/i18n/config';
+import { Locale } from '@/app/shared/i18n/types';
+import { consoleLogDev } from '@/app/shared/utils/common';
 
 export const config = {
   matcher: [

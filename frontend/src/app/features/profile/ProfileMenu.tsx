@@ -1,9 +1,9 @@
 import { Avatar, Dropdown, MenuProps } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
-import { LangProps } from '@/app/i18n/types';
-import { useTranslation } from '@/app/i18n/useTranslation.server';
+import { LangProps } from '@/app/shared/i18n/types';
+import { useTranslation } from '@/app/shared/i18n/useTranslation.server';
 
-async function Profile({ params }: LangProps) {
+async function ProfileMenu({ params }: LangProps) {
   const t = await useTranslation(params.lang);
 
   const items: MenuProps['items'] = [
@@ -27,4 +27,4 @@ async function Profile({ params }: LangProps) {
     </Dropdown>
   );
 }
-export default Profile;
+export default ProfileMenu;
