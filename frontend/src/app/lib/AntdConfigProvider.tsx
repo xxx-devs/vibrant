@@ -8,6 +8,18 @@ const localeMap: Record<Locale, () => Promise<AntdLocale>> = {
   ru: () => import('antd/es/locale/ru_RU').then((module) => module.default),
 };
 
+// вынести в отдельный файл
+const theme = {
+  components: {
+    Layout: {
+      headerBg: 'white',
+    },
+    Typography: {
+      titleMarginBottom: 0,
+    },
+  },
+};
+
 interface AntdConfigProviderProps {
   locale: Locale;
   dir: 'ltr' | 'rtl';
@@ -19,7 +31,7 @@ const AntdConfigProvider = async (props: PropsWithChildren<AntdConfigProviderPro
   const antdLocale: AntdLocale = await localeMap[locale]();
 
   return (
-    <ConfigProvider locale={antdLocale} direction={dir}>
+    <ConfigProvider locale={antdLocale} direction={dir} theme={theme}>
       {children}
     </ConfigProvider>
   );
