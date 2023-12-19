@@ -1,5 +1,5 @@
 import { PropsWithChildren } from 'react';
-import { Locale } from '@/app/i18n/types';
+import { Locale } from '@/app/shared/i18n/types';
 import { ConfigProvider } from 'antd';
 import { Locale as AntdLocale } from 'antd/es/locale';
 

@@ -1,0 +1,9 @@
+.carousel__header {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+}
+
+.event__card {
+    height: 100%;
+}

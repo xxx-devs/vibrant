@@ -1,17 +1,17 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import StyledComponentsRegistry from '@/app/lib/AntdRegistry';
-import { direction, getDictionary } from '@/app/i18n/dictionaries/dictionaries';
-import { i18n } from '@/app/i18n/config';
-import { LangProps } from '@/app/i18n/types';
-import AntdConfigProvider from '@/app/lib/AntdConfigProvider';
+import StyledComponentsRegistry from '@/app/lib/providers/AntdRegistry';
+import { direction, getDictionary } from '@/app/lib/i18n/dictionaries';
+import { i18n } from '@/app/lib/i18n/config';
+import { LangProps } from '@/app/shared/i18n/types';
+import AntdConfigProvider from '@/app/lib/providers/AntdConfigProvider';
 import dayjs from 'dayjs';
 import DayJSLocale from '@/app/lib/DayJSLocale';
-import { consoleLogDev } from '@/app/utils/common';
-import { TranslationProvider } from '../i18n/TranslationContext';
+import { consoleLogDev } from '@/app/shared/utils/common';
+import { TranslationProvider } from '../lib/providers/TranslationContext';
 
-import '../globals.css';
+import '../lib/styles/globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 

@@ -1,8 +1,8 @@
 'use client';
 
-import { useTranslationContext } from '@/app/i18n/TranslationContext';
 import { useMemo } from 'react';
-import { getTranslationMethod } from '@/app/i18n/utils';
+import { getTranslationMethod } from '@/app/shared/i18n/utils';
+import { useTranslationContext } from '@/app/shared/i18n/useTranslationContext';
 
 export const useTranslation = () => {
   const { dictionary, locale } = useTranslationContext();

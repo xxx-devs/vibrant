@@ -1,6 +1,6 @@
 import IntlMessageFormat from 'intl-messageformat';
 
-import { Dictionary, Locale } from '@/app/i18n/types';
+import { Dictionary, Locale } from '@/app/shared/i18n/types';
 
 // TODO https://formatjs.io/docs/intl-messageformat/#formatters ??
 export const getTranslationMethod =

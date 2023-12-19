@@ -1,10 +1,9 @@
-import LocaleSwitcher from '@/app/[lang]/components/LocaleSwitcher';
-import Profile from '@/app/[lang]/components/Profile';
-import { LangProps } from '@/app/i18n/types';
+import { LocaleSwitcher, ProfileMenu } from '@/app/features';
+import { LangProps } from '@/app/shared/i18n/types';
 import { Button, Flex } from 'antd';
-import { Title } from '@/app/lib/antd/Typography';
-import { useTranslation } from '@/app/i18n/useTranslation.server';
-import styles from '../page.module.css';
+import { Title } from '@/app/shared/ui/Typography';
+import { useTranslation } from '@/app/shared/i18n/useTranslation.server';
+import styles from './styles.module.css';
 
 const Header = async ({ params }: LangProps) => {
   const t = await useTranslation(params.lang);
@@ -17,7 +16,7 @@ const Header = async ({ params }: LangProps) => {
           {t((d) => d['create-event'])}
         </Button>
         <LocaleSwitcher />
-        <Profile params={params} />
+        <ProfileMenu params={params} />
       </Flex>
     </>
   );

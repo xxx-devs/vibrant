@@ -1,0 +1,15 @@
+.carousel__row {
+    height: 400px;
+    overflow: scroll;
+    position: relative;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    scroll-behavior: smooth;
+    /* for hoverable effect */
+    padding-bottom: 20px;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.carousel__row::-webkit-scrollbar {
+    display: none;
+}

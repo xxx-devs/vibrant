@@ -1,13 +1,14 @@
 'use client';
 
 import React, { useMemo, useRef } from 'react';
-import { Button, Col, Flex, Row } from 'antd';
-import { Title } from '@/app/lib/antd/Typography';
+import { Button, Flex } from 'antd';
+import { Title } from '@/app/shared/ui/Typography';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
-import styles from '@/app/[lang]/page.module.css';
-import Card from '@/app/lib/antd/Card';
-import { useTranslation } from '@/app/i18n/useTranslation.client';
+import Card from '@/app/shared/ui/Card';
+import { useTranslation } from '@/app/shared/i18n/useTranslation.client';
 import { DEFAULT_EVENTS_COUNT } from '@/app/[lang]/constants';
+import Carousel from '@/app/shared/ui/carousel/Carousel';
+import styles from './styles.module.css';
 
 interface EventsCarouselProps {
   events: React.ReactElement[];
@@ -17,24 +18,24 @@ interface EventsCarouselProps {
 }
 
 const EventsCarousel = ({ events, title, eventWidth, totalEventsCount }: EventsCarouselProps) => {
-  const rowRef = useRef<HTMLDivElement>(null);
+  const carouselRef = useRef<HTMLDivElement>(null);
   const t = useTranslation();
 
   const onClickRight = () => {
-    if (rowRef.current) {
-      const { scrollLeft } = rowRef.current;
+    if (carouselRef.current) {
+      const { scrollLeft } = carouselRef.current;
       const nextScrollCard = Math.floor(scrollLeft / eventWidth) + 1;
 
-      rowRef.current.scrollLeft = nextScrollCard * eventWidth;
+      carouselRef.current.scrollLeft = nextScrollCard * eventWidth;
     }
   };
 
   const onClickLeft = () => {
-    if (rowRef.current) {
-      const { scrollLeft } = rowRef.current;
+    if (carouselRef.current) {
+      const { scrollLeft } = carouselRef.current;
       const prevScrollCard = Math.ceil(scrollLeft / eventWidth) - 1;
 
-      rowRef.current.scrollLeft = prevScrollCard * eventWidth;
+      carouselRef.current.scrollLeft = prevScrollCard * eventWidth;
     }
   };
 
@@ -64,7 +65,7 @@ const EventsCarousel = ({ events, title, eventWidth, totalEventsCount }: EventsC
   }, [events, totalEventsCount]);
 
   return (
-    <section>
+    <div>
       <Flex justify="space-between" align="flex-end" className={styles.carousel__header}>
         <Title>{title}</Title>
         <Flex gap="middle">
@@ -83,14 +84,10 @@ const EventsCarousel = ({ events, title, eventWidth, totalEventsCount }: EventsC
           </Flex>
         </Flex>
       </Flex>
-      <Row gutter={16} justify="start" wrap={false} className={styles.events__row} ref={rowRef}>
-        {rowChildren.map((child, index) => (
-          <Col key={index} style={{ minWidth: eventWidth }}>
-            {child}
-          </Col>
-        ))}
-      </Row>
-    </section>
+      <Carousel ref={carouselRef} elementWidth={eventWidth}>
+        {rowChildren}
+      </Carousel>
+    </div>
   );
 };
 
