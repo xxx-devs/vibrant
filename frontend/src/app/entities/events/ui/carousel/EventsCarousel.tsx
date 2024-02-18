@@ -4,10 +4,10 @@ import React, { useMemo, useRef } from 'react';
 import { Button, Flex } from 'antd';
 import { Title } from '@/app/shared/ui/Typography';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
-import Card from '@/app/shared/ui/Card';
 import { useTranslation } from '@/app/shared/i18n/useTranslation.client';
-import { DEFAULT_EVENTS_COUNT } from '@/app/[lang]/constants';
 import Carousel from '@/app/shared/ui/carousel/Carousel';
+import { DEFAULT_EVENTS_COUNT } from '@/app/[lang]/constants';
+import Card from '@/app/shared/ui/Card';
 import styles from './styles.module.css';
 
 interface EventsCarouselProps {
@@ -47,7 +47,7 @@ const EventsCarousel = ({ events, title, eventWidth, totalEventsCount }: EventsC
       // так как то, как отображается событие хранится в EventCard, и если там поменяется то и тут надо вносить изменение
       // это своего рода дублирование
       result.push(
-        <Card className={styles.event__card} hoverable>
+        <Card key="show-more" className={styles.event__card} hoverable>
           <Button type="link">{t((d) => d['events-carousel']['show-more'])}</Button>
         </Card>,
       );

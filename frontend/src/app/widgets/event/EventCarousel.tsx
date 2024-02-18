@@ -1,8 +1,8 @@
 import React from 'react';
 import { useTranslation } from '@/app/shared/i18n/useTranslation.server';
-import { EventCard, EventsCarousel } from '@/app/entities/event';
 import { LangProps } from '@/app/shared/i18n/types';
 import { Event } from '@/app/shared/types/Event';
+import { EventCard, EventsCarousel } from '../../entities/events';
 
 const CARD_WIDTH = 350;
 

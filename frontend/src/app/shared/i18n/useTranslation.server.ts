@@ -1,3 +1,5 @@
+'use server';
+
 import { getDictionary } from '@/app/lib/i18n/dictionaries';
 import { getTranslationMethod } from '@/app/shared/i18n/utils';
 import { Locale } from '@/app/shared/i18n/types';

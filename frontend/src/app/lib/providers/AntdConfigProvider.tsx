@@ -17,6 +17,10 @@ const theme = {
     Typography: {
       titleMarginBottom: 0,
     },
+    Form: {
+      itemMarginBottom: 0,
+      labelFontSize: 12,
+    },
   },
 };
 

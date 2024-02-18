@@ -6,7 +6,6 @@ import { direction, getDictionary } from '@/app/lib/i18n/dictionaries';
 import { i18n } from '@/app/lib/i18n/config';
 import { LangProps } from '@/app/shared/i18n/types';
 import AntdConfigProvider from '@/app/lib/providers/AntdConfigProvider';
-import dayjs from 'dayjs';
 import DayJSLocale from '@/app/lib/DayJSLocale';
 import { consoleLogDev } from '@/app/shared/utils/common';
 import { TranslationProvider } from '../lib/providers/TranslationContext';
@@ -25,19 +24,17 @@ export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
 }
 
-export default async function RootLayout({
-  children,
-  params: { lang },
-}: React.PropsWithChildren<LangProps>) {
+export default async function RootLayout({ children, params }: React.PropsWithChildren<LangProps>) {
   consoleLogDev('update RootLayout');
+  const { lang } = params;
+
   const dictionary = await getDictionary(lang);
   const dir = direction[lang];
-
-  dayjs.locale(lang);
 
   return (
     <html lang={lang} dir={dir}>
       <body className={inter.className}>
+        <DayJSLocale params={params} />
         <StyledComponentsRegistry>
           <AntdConfigProvider locale={lang} dir={dir}>
             <TranslationProvider dictionary={dictionary} locale={lang}>
@@ -45,7 +42,6 @@ export default async function RootLayout({
             </TranslationProvider>
           </AntdConfigProvider>
         </StyledComponentsRegistry>
-        <DayJSLocale />
       </body>
     </html>
   );

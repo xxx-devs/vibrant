@@ -7,8 +7,9 @@ import {
 } from '@/app/shared/ui/Layout';
 import React from 'react';
 import { Header } from '@/app/widgets/layout';
-import { eventModel } from '@/app/entities/event';
 import { EventsCarousel } from '@/app/widgets/event';
+import { EventsFilter } from '@/app/features';
+import { eventModel } from '../entities/events';
 import styles from './styles.module.css';
 
 export default async function Home({ params }: LangProps) {
@@ -18,6 +19,7 @@ export default async function Home({ params }: LangProps) {
         <Header params={params} />
       </AntdHeader>
       <AntContent className={styles.content}>
+        <EventsFilter />
         <EventsCarousel getEvents={eventModel.getData} params={params} />
         <EventsCarousel getEvents={eventModel.getData} params={params} />
       </AntContent>

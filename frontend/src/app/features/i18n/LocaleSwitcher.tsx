@@ -1,13 +1,13 @@
 'use client';
 
 import { Button, Dropdown, MenuProps } from 'antd';
-import Cookies from 'js-cookie';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import { i18n, PREFERRED_LOCALE_COOKIE } from '@/app/lib/i18n/config';
+import { i18n } from '@/app/lib/i18n/config';
 import { Locale } from '@/app/shared/i18n/types';
 import { useTranslationContext } from '@/app/shared/i18n/useTranslationContext';
 import { GlobalOutlined } from '@ant-design/icons';
+import { setPreferredLocale } from '@/app/shared/utils/cookies';
 
 const LANGUAGES_TRANSLATIONS: Record<Locale, string> = {
   en: 'English',
@@ -28,10 +28,6 @@ export default function LocaleSwitcher() {
     return segments.join('/');
   };
 
-  const onClick = (locale: Locale) => {
-    Cookies.set(PREFERRED_LOCALE_COOKIE, locale, { expires: 365 });
-  };
-
   const items: MenuProps['items'] = i18n.locales.map((locale) => ({
     key: locale,
     label: (
@@ -42,7 +38,9 @@ export default function LocaleSwitcher() {
           // search: searchParams.toString(),
         }}
         prefetch
-        onClick={() => onClick(locale)}
+        onClick={async () => {
+          await setPreferredLocale(locale);
+        }}
       >
         {LANGUAGES_TRANSLATIONS[locale]}
       </Link>
